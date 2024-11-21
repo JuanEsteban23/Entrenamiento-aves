@@ -36,6 +36,8 @@ interface = gr.Interface(
 )
 
 if __name__ == '__main__':
-    interface.launch()
+    # Obtiene el puerto asignado por Render
+    port = int(os.environ.get("PORT", 7860))  # Usa 7860 como valor por defecto
+    interface.launch(server_name="0.0.0.0", server_port=port)
 
 
